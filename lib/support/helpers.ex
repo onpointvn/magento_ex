@@ -42,4 +42,47 @@ defmodule Magento.Helpers do
   defp load_env_value({k, v}), do: {k, load_env_value(v)}
 
   defp load_env_value(value), do: value
+
+  @doc """
+  Clean nil value from map/list recursively
+
+  Example:
+
+  iex> clean_nil(%{a: 1, b: nil, c: [1, 2, nil]})
+    %{a: 1, c: [1, 2]}
+  """
+  @spec clean_nil(map()) :: map()
+  def clean_nil(%{__struct__: mod} = param) when is_atom(mod) do
+    param
+  end
+
+  def clean_nil(%{} = param) do
+    Enum.reduce(param, %{}, fn
+      {_key, nil}, acc ->
+        acc
+
+      {key, value}, acc ->
+        Map.put(acc, key, clean_nil(value))
+    end)
+  end
+
+  def clean_nil(param) when is_list(param) do
+    param
+    |> Enum.reduce([], fn item, acc ->
+      case item do
+        nil ->
+          acc
+
+        # handle keyword list
+        {_, nil} ->
+          acc
+
+        _ ->
+          [clean_nil(item) | acc]
+      end
+    end)
+    |> Enum.reverse()
+  end
+
+  def clean_nil(param), do: param
 end
