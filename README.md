@@ -1,6 +1,12 @@
-# Magento
+# Magento Extenstion
 
-**TODO: Add description**
+## Introduction
+
+This extension supports integrate Magento into Elixir projects, including:
+
+- Authetication with Magento admin account.
+- Search criteria builder for querying orders, products... by using APIs.
+- Getting data from Magento APIs by using defined functions.
 
 ## Installation
 
@@ -15,6 +21,7 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/magento](https://hexdocs.pm/magento).
+## Reference
+
+https://magento.redoc.ly/2.4.4-admin/
+https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches/
