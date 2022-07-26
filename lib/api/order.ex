@@ -8,6 +8,7 @@ defmodule Magento.Order do
 
   https://magento.redoc.ly/2.4.4-admin/tag/orders#operation/salesOrderRepositoryV1GetListGet
   """
+  @spec list_orders(params :: map(), opts :: Keyword.t()) :: {:ok, map()} | {:error, any()}
   def list_orders(params, opts \\ []) do
     with {:ok, query} <- Magento.SearchCriteria.build_query(params),
          {:ok, client} <- Client.new(opts) do
