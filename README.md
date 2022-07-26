@@ -5,8 +5,8 @@
 This extension supports integrate Magento into Elixir projects, including:
 
 - Authetication with Magento admin account.
-- Search criteria builder for querying orders, products... by using APIs.
-- Getting data from Magento APIs by using defined functions.
+- Search criteria builder for querying orders, products... via APIs.
+- Getting data from Magento APIs using defined functions.
 
 ## Process flows
 
