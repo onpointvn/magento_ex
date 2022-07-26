@@ -9,7 +9,7 @@ defmodule Magento.Helpers do
       timeout: options[:timeout],
       proxy: options[:proxy],
       partner_url: options[:partner_url],
-      api_key: options[:api_key],
+      access_token: options[:access_token],
       middlewares: options[:middlewares] || []
     }
   end
@@ -51,7 +51,7 @@ defmodule Magento.Helpers do
   iex> clean_nil(%{a: 1, b: nil, c: [1, 2, nil]})
     %{a: 1, c: [1, 2]}
   """
-  @spec clean_nil(map()) :: map()
+  @spec clean_nil(map() | list()) :: map()
   def clean_nil(%{__struct__: mod} = param) when is_atom(mod) do
     param
   end
