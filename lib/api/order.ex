@@ -1,4 +1,4 @@
-defmodule Magento.Orders do
+defmodule Magento.Order do
   alias Magento.Client
 
   @doc """
