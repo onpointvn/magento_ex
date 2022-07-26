@@ -8,6 +8,13 @@ This extension supports integrate Magento into Elixir projects, including:
 - Search criteria builder for querying orders, products... by using APIs.
 - Getting data from Magento APIs by using defined functions.
 
+## Process flows
+
+### Order process flow
+
+Follow this tutorial to learn how a Magento order is processed
+https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
