@@ -1,9 +1,9 @@
-defmodule AdobeCommerce.Helpers do
+defmodule Magento.Helpers do
   @doc """
   Get configuration from environment
   """
   def get_config do
-    options = load_env(:adobe_commerce, :config)
+    options = load_env(:magento, :config)
 
     %{
       timeout: options[:timeout],

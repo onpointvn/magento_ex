@@ -1,6 +1,6 @@
-defmodule AdobeCommerce do
+defmodule Magento do
   @moduledoc """
-  Documentation for `AdobeCommerce`.
+  Documentation for `Magento`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule AdobeCommerce do
 
   ## Examples
 
-      iex> AdobeCommerce.hello()
+      iex> Magento.hello()
       :world
 
   """
