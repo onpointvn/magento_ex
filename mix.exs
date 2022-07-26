@@ -1,9 +1,9 @@
-defmodule AdobeEcommerce.MixProject do
+defmodule AdobeCommerce.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :adobe_ecommerce,
+      app: :adobe_commerce,
       version: "0.1.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,

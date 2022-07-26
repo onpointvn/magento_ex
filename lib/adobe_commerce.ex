@@ -1,6 +1,6 @@
-defmodule AdobeEcommerce do
+defmodule AdobeCommerce do
   @moduledoc """
-  Documentation for `AdobeEcommerce`.
+  Documentation for `AdobeCommerce`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule AdobeEcommerce do
 
   ## Examples
 
-      iex> AdobeEcommerce.hello()
+      iex> AdobeCommerce.hello()
       :world
 
   """
