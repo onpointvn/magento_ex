@@ -69,21 +69,21 @@ defmodule Magento.Client do
     end
   end
 
-  # @doc """
-  # Perform a GET request
+  @doc """
+  Perform a GET request
 
-  #   get("/users")
-  #   get("/users", query: [scope: "admin"])
-  #   get(client, "/users")
-  #   get(client, "/users", query: [scope: "admin"])
-  #   get(client, "/users", body: %{name: "Jon"})
-  # """
-  # @spec get(Tesla.Client.t(), String.t(), keyword()) :: {:ok, any()} | {:error, any()}
-  # def get(client, path, opts \\ []) do
-  #   client
-  #   |> Tesla.get(path, [{:opts, [api_name: path]} | opts])
-  #   |> process()
-  # end
+    get("/users")
+    get("/users", query: [scope: "admin"])
+    get(client, "/users")
+    get(client, "/users", query: [scope: "admin"])
+    get(client, "/users", body: %{name: "Jon"})
+  """
+  @spec get(Tesla.Client.t(), String.t(), keyword()) :: {:ok, any()} | {:error, any()}
+  def get(client, path, opts \\ []) do
+    client
+    |> Tesla.get(path, [{:opts, [api_name: path]} | opts])
+    |> process()
+  end
 
   defp process(response) do
     module =
