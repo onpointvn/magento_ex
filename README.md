@@ -28,7 +28,8 @@ def deps do
 end
 ```
 
-## Reference
+## References
 
 https://magento.redoc.ly/2.4.4-admin/
+
 https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches/
