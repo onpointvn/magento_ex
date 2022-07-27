@@ -84,7 +84,37 @@ end
 
 defmodule Magento.SearchCriteria do
   @doc """
-  Define building search criteria method
+  Build search criteria from params
+
+  Example
+
+    iex> params = %{
+        current_page: 0,
+        filter_groups: [
+          %{
+            filters: [
+              %{
+                condition_type: "in",
+                field: "entity_id",
+                value: "1,2"
+              }
+            ]
+          }
+        ],
+        sort_orders: [
+          %{field: "entity_id", direction: "DESC"}
+        ]
+      }
+    iex> build_query(params)
+      {:ok,
+       %{
+         "searchCriteria[current_page]" => 0,
+         "searchCriteria[filter_groups][0][filters][0][condition_type]" => "in",
+         "searchCriteria[filter_groups][0][filters][0][field]" => "entity_id",
+         "searchCriteria[filter_groups][0][filters][0][value]" => "1,2",
+         "searchCriteria[sort_orders][0][direction]" => "DESC",
+         "searchCriteria[sort_orders][0][field]" => "entity_id"
+       }}
 
   Reference
 
