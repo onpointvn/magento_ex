@@ -50,7 +50,7 @@ defmodule Magento.Product do
     use_config_notify_stock_qty: [type: :boolean, required: true],
     use_config_qty_increments: [type: :boolean, required: true]
   }
-  @update_stock_items_params %{
+  @update_stock_items_schema %{
     item_id: [type: :string, required: true],
     product_sku: [type: :string, required: true],
     stock_item: [type: @stock_item_schema, required: true]
@@ -58,7 +58,7 @@ defmodule Magento.Product do
   @spec update_stock_items(params :: map(), opts :: Keyword.t()) :: {:ok, map()} | {:error, any()}
   def update_stock_items(params, opts \\ []) do
     with {:ok, params} <-
-           Contrak.validate(params, @update_stock_items_params),
+           Contrak.validate(params, @update_stock_items_schema),
          {:ok, client} <- Client.new(opts) do
       Client.put(
         client,
