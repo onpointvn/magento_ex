@@ -122,7 +122,7 @@ defmodule Magento.Client do
   end
 
   @doc """
-  Perform a POST request.
+  Perform a PUT request.
 
     put("/users", %{name: "Jon"})
     put("/users", %{name: "Jon"}, query: [scope: "admin"])
