@@ -21,7 +21,7 @@ defmodule Magento.Product do
   Reference
   https://magento.redoc.ly/2.4.4-admin/tag/productsproductSkustockItemsitemId
   """
-  @stock_item_schema %{
+  @update_stock_item_schema %{
     backorders: [type: :integer, required: true],
     enable_qty_increments: [type: :boolean, required: true],
     extension_attributes: [type: :map],
@@ -50,15 +50,15 @@ defmodule Magento.Product do
     use_config_notify_stock_qty: [type: :boolean, required: true],
     use_config_qty_increments: [type: :boolean, required: true]
   }
-  @spec update_stock_items(
+  @spec update_stock_item(
           product_sku :: String.t(),
           item_id :: String.t(),
           params :: map(),
           opts :: Keyword.t()
         ) :: {:ok, map()} | {:error, any()}
-  def update_stock_items(product_sku, item_id, params, opts \\ []) do
+  def update_stock_item(product_sku, item_id, params, opts \\ []) do
     with {:ok, params} <-
-           Contrak.validate(params, @stock_item_schema),
+           Contrak.validate(params, @update_stock_item_schema),
          {:ok, client} <- Client.new(opts) do
       Client.put(
         client,
